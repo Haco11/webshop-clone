@@ -2,9 +2,6 @@ import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 
 import "./globals.scss";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -13,10 +10,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        {" "}
+      <body>
         <Header />
-        {children}
+        <main className="container">{children}</main>
         <Footer />
       </body>
     </html>

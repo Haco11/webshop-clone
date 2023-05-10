@@ -1,30 +1,35 @@
-.header {
-  background-color: #fff;
-  padding: 1.5rem 4rem;
+.header__container {
+  width: 100%;
   position: fixed;
   top: 0px;
   left: 0px;
-  width: 100%;
+  z-index: 999;
+  background-color: #fff;
+  border-bottom: 1px solid #d8dce1;
+}
+
+.header {
+  margin: auto;
+  padding: 1.5rem 4.375rem;
+  max-width: 1600px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #d8dce1;
-
   &__link {
     display: flex;
     gap: 1rem;
     a {
-      font-size: larger;
-      font-weight: 600;
+      font-size: 1rem;
+      font-weight: 100;
       color: #000;
       text-decoration-line: none;
     }
   }
   &__icon {
     display: flex;
-    gap: 1rem;
+    gap: 3rem;
     svg {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
     }
     a {
       font-size: 1.25rem;
