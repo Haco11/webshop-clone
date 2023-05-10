@@ -1,0 +1,35 @@
+.header {
+  background-color: #fff;
+  padding: 1.5rem 4rem;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #d8dce1;
+
+  &__link {
+    display: flex;
+    gap: 1rem;
+    a {
+      font-size: larger;
+      font-weight: 600;
+      color: #000;
+      text-decoration-line: none;
+    }
+  }
+  &__icon {
+    display: flex;
+    gap: 1rem;
+    svg {
+      font-size: 1.25rem;
+    }
+    a {
+      font-size: 1.25rem;
+      color: #000;
+      text-decoration-line: none;
+    }
+  }
+}
