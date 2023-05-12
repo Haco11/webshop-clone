@@ -3,6 +3,7 @@ import Image from "next/image";
 import style from "./Header.module.scss";
 import { FiSearch, FiUser } from "react-icons/fi";
 import { BsCart } from "react-icons/bs";
+import { RxHamburgerMenu } from "react-icons/rx";
 const Header = () => {
   return (
     <div className={style.header__container}>
@@ -29,8 +30,12 @@ const Header = () => {
           <a href="#">
             <BsCart />
           </a>
+          <div className={style.header__hamburger}>
+            <RxHamburgerMenu />
+          </div>
         </div>
       </div>
+      <div className={style.header__mobiler}></div>
     </div>
   );
 };
