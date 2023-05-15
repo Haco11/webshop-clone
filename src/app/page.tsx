@@ -15,7 +15,6 @@ export default function Home() {
           <div className={styles.title}>Koenigsegg Gear</div>
         </section>
       </section>
-
       <section className={styles.wrap}>
         <div className={styles.display}>
           <div className={styles.display__img}>
@@ -31,6 +30,31 @@ export default function Home() {
             <a className={styles.display__text__btn} href="#">
               Shop Now
             </a>
+          </div>
+        </div>
+      </section>
+      Products
+      <section className={styles.wrap}>
+        <div className={styles.product}>
+          <div className={styles.products__title}>
+            <h2>HOODIES AND SWEATSHIRTS</h2>
+          </div>
+          <div className={styles.products}>
+            <div className={styles.product}>
+              <img src="" alt="" />
+              <h4></h4>
+              <p></p>
+            </div>
+            <div className={styles.product}>
+              <img src="" alt="" />
+              <h4></h4>
+              <p></p>
+            </div>
+            <div className={styles.product}>
+              <img src="" alt="" />
+              <h4></h4>
+              <p></p>
+            </div>
           </div>
         </div>
       </section>
