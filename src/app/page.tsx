@@ -9,6 +9,9 @@ export default function Home() {
         <div className={styles.main}>
           <Image src={im1} alt="aa" />
         </div>
+        <section className={styles.wrap}>
+          <div className={styles.title}>Koenigsegg Gear</div>
+        </section>
       </section>
       <section></section>
     </main>

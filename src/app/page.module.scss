@@ -16,3 +16,12 @@
     object-fit: cover;
   }
 }
+
+.title {
+  font-size: 3.75rem;
+  text-align: center;
+  text-transform: uppercase;
+  @media only screen and (max-width: 600px) {
+    font-size: 2.75rem;
+  }
+}
