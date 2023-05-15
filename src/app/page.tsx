@@ -1,6 +1,8 @@
 import styles from "./page.module.scss";
 import im1 from "../assets/img1.png";
 import im2 from "../assets/img2.jpg";
+import im3 from "../assets/img3.jpg";
+import im4 from "../assets/img4.jpg";
 import im6 from "../assets/img6.jpg";
 import im7 from "../assets/img7.jpg";
 import im8 from "../assets/img8.jpg";
@@ -59,6 +61,46 @@ export default function Home() {
               <h4>Ghost Sweatshirt</h4>
               <p>999 SEK</p>
             </div>
+          </div>
+        </div>
+      </section>
+      {/* Display Section 2*/}
+      <section className={styles.wrap}>
+        <div className={`${styles.display} ${styles.display2}`}>
+          <div className={styles.display__img}>
+            <Image src={im3} alt="car" />
+          </div>
+          <div className={styles.display__text}>
+            <h2>
+              <p>ULTIMATE</p>
+              <p className={styles.display__text__title}>PERFORMANCE</p>
+              <p>JEWELRY</p>
+            </h2>
+            <p>Jewelry that adds a spectacular sparkle to our store.</p>
+            <a className={styles.display__text__btn} href="#">
+              Shop Now
+            </a>
+          </div>
+        </div>
+      </section>
+      {/* Display Section 3*/}
+      <section className={styles.wrap}>
+        <div className={styles.display}>
+          <div className={styles.display__img}>
+            <Image src={im4} alt="t-shirt" />
+          </div>
+          <div className={styles.display__text}>
+            <h2>
+              <p>HELLO</p>
+              <p className={styles.display__text__title}>YELLOW</p>
+            </h2>
+            <p>
+              Brighten your style with this yellow Terry polo shirt, featuring
+              the Koenigsegg shield embroidered on the chest in yellow.
+            </p>
+            <a className={styles.display__text__btn} href="#">
+              Shop Now
+            </a>
           </div>
         </div>
       </section>
