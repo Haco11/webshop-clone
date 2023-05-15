@@ -6,6 +6,9 @@ import im4 from "../assets/img4.jpg";
 import im6 from "../assets/img6.jpg";
 import im7 from "../assets/img7.jpg";
 import im8 from "../assets/img8.jpg";
+import im9 from "../assets/img9.jpg";
+import im10 from "../assets/img10.jpg";
+import im11 from "../assets/img11.jpg";
 
 import Image from "next/image";
 
@@ -101,6 +104,31 @@ export default function Home() {
             <a className={styles.display__text__btn} href="#">
               Shop Now
             </a>
+          </div>
+        </div>
+      </section>
+      {/* Products Section 2*/}
+      <section className={styles.wrap}>
+        <div className={styles.product__container}>
+          <div className={styles.products__title}>
+            <h2>BESTSELLERS</h2>
+          </div>
+          <div className={styles.products}>
+            <div className={styles.product}>
+              <Image src={im9} alt="product" />
+              <h4>Black Cap</h4>
+              <p>355 SEK</p>
+            </div>
+            <div className={styles.product}>
+              <Image src={im10} alt="product" />
+              <h4>Koenigsegg Keyring</h4>
+              <p>359 SEK</p>
+            </div>
+            <div className={styles.product}>
+              <Image src={im11} alt="product" />
+              <h4>Grey Cap</h4>
+              <p>355 SEK</p>
+            </div>
           </div>
         </div>
       </section>
