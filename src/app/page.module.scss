@@ -68,6 +68,11 @@
       text-decoration: none;
       background-color: #566261;
       padding: 1rem 2rem;
+      text-transform: uppercase;
+      &:hover {
+        background-color: #ffc801;
+        color: #383839;
+      }
     }
   }
 }
