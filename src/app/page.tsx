@@ -3,6 +3,7 @@ import im1 from "../assets/img1.png";
 import im2 from "../assets/img2.jpg";
 import im3 from "../assets/img3.jpg";
 import im4 from "../assets/img4.jpg";
+import im5 from "../assets/img5.jpg";
 import im6 from "../assets/img6.jpg";
 import im7 from "../assets/img7.jpg";
 import im8 from "../assets/img8.jpg";
@@ -129,6 +130,28 @@ export default function Home() {
               <h4>Grey Cap</h4>
               <p>355 SEK</p>
             </div>
+          </div>
+        </div>
+      </section>
+      {/* Display Section 4*/}
+      <section className={styles.wrap}>
+        <div className={`${styles.display} ${styles.display2}`}>
+          <div className={styles.display__img}>
+            <Image src={im5} alt="car" />
+          </div>
+          <div className={styles.display__text}>
+            <h2>
+              <p>PERFECTION</p>
+              <p className={styles.display__text__title}>SCALED</p>
+              <p>DOWN</p>
+            </h2>
+            <p>
+              Discover the scale models that Koenigsegg collectors love. They’re
+              packed with precise details, and look great anywhere.
+            </p>
+            <a className={styles.display__text__btn} href="#">
+              Shop Now
+            </a>
           </div>
         </div>
       </section>
