@@ -34,8 +34,11 @@ const Header = ({ toggleCart, selectedNavItem }: Props) => {
           <a href="#">
             <FiUser />
           </a>
-          <a href="#" onClick={() => toggleCart()}>
-            {selectedNavItem ? <BsCart /> : <p>Not</p>}
+          <a
+            href="#"
+            onClick={() => toggleCart()}
+            className={selectedNavItem ? style.icon__active : undefined}>
+            <BsCart />
           </a>
           <div className={style.header__hamburger}>
             <RxHamburgerMenu />
