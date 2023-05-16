@@ -13,15 +13,16 @@ import {
 const Footer = () => {
   return (
     <div className={style.footer}>
-      <div>
-        <div>
+      <div className={style.row}>
+        <div className={style.title}>
           <h2>
             <p>THE</p>
-            <p>SHOW</p>
-            <p>MUST GO ON</p>
+            <p className={style.title__main}>SHOW</p>
+            <p>MUST</p>
+            <p>GO ON</p>
           </h2>
         </div>
-        <div>
+        <div className={style.links}>
           <div>
             <p>Wearable</p>
             <p>Collectibles</p>
@@ -31,15 +32,15 @@ const Footer = () => {
             <p>Terms & Conditions</p>
           </div>
         </div>
-        <div>
+        <div className={style.social}>
           <FaInstagram />
           <FaTwitter />
           <FaFacebook />
           <FaYoutube />
           <FaLinkedin />
         </div>
-        <a href="">
-          <Image src={im12} />
+        <a href="" className={style.logo}>
+          <Image src={im12} alt="logo" />
         </a>
       </div>
       <div></div>

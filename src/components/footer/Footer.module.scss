@@ -8,4 +8,59 @@
   @media only screen and (max-width: 600px) {
     padding: 1.5rem 1rem;
   }
+
+  .row {
+    width: 100%;
+    padding: 4rem 6rem 0 6rem;
+    border-top: 1px solid #383839;
+    border-bottom: 1px solid #383839;
+    display: grid;
+    grid-template-areas:
+      "a b"
+      "c d";
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    @media only screen and (max-width: 880px) {
+      padding: 3rem 2rem 0 2rem;
+
+      grid-template-areas:
+        "a d"
+        "c ."
+        "b .";
+      align-items: unset;
+      gap: 2rem;
+    }
+    .title {
+      width: 100%;
+      font-size: 2rem;
+      grid-area: a;
+      &__main {
+        margin-left: 5rem;
+      }
+    }
+    .social {
+      grid-area: c;
+      display: flex;
+      gap: 2rem;
+      font-size: 1.25rem;
+    }
+    .links {
+      grid-area: b;
+      font-size: 1.5rem;
+      display: flex;
+      gap: 2rem;
+      @media only screen and (max-width: 880px) {
+        flex-direction: column;
+      }
+    }
+    .logo {
+      grid-area: d;
+      text-align: right;
+
+      img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
 }
