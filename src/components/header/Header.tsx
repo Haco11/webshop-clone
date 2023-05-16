@@ -1,10 +1,17 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import style from "./Header.module.scss";
 import { FiSearch, FiUser } from "react-icons/fi";
 import { BsCart } from "react-icons/bs";
 import { RxHamburgerMenu } from "react-icons/rx";
-const Header = () => {
+
+type Props = {
+  toggleCart: () => void;
+  selectedNavItem: boolean;
+};
+
+const Header = ({ toggleCart, selectedNavItem }: Props) => {
   return (
     <div className={style.header__container}>
       <div className={style.header}>
@@ -27,8 +34,8 @@ const Header = () => {
           <a href="#">
             <FiUser />
           </a>
-          <a href="#">
-            <BsCart />
+          <a href="#" onClick={() => toggleCart()}>
+            {selectedNavItem ? <BsCart /> : <p>Not</p>}
           </a>
           <div className={style.header__hamburger}>
             <RxHamburgerMenu />
