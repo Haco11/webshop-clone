@@ -4,8 +4,8 @@ import im8 from "./assets/img8.jpg";
 import im9 from "./assets/img9.jpg";
 import im10 from "./assets/img10.jpg";
 import im11 from "./assets/img11.jpg";
-
-export const data = [
+import { Product } from "./type/Product";
+export const data: Product[] = [
   {
     id: 1,
     title: "Ghost Squadron Sweatshirt",

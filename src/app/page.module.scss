@@ -104,33 +104,9 @@
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-    .product {
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      height: 500px;
-      min-width: 300px;
-      img {
-        width: 100%;
-        min-height: 400px;
-        object-fit: cover;
-        transition: transform 0.3s;
-        &:hover {
-          transform: scale(1.1);
-        }
-      }
-      h4,
-      p {
-        z-index: 999;
-        background-color: #fff;
-        padding: 0.5rem 0;
-        font-size: 1rem;
-      }
-    }
   }
 }
+
 /*Cart css*/
 .cart {
   position: fixed;

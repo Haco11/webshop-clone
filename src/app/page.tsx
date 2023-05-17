@@ -1,19 +1,18 @@
 import styles from "./page.module.scss";
+import Products from "@/components/products/Products";
 import im1 from "../assets/img1.png";
 import im2 from "../assets/img2.jpg";
 import im3 from "../assets/img3.jpg";
 import im4 from "../assets/img4.jpg";
 import im5 from "../assets/img5.jpg";
-import im6 from "../assets/img6.jpg";
-import im7 from "../assets/img7.jpg";
-import im8 from "../assets/img8.jpg";
-import im9 from "../assets/img9.jpg";
-import im10 from "../assets/img10.jpg";
-import im11 from "../assets/img11.jpg";
 
+import { data } from "../data";
 import Image from "next/image";
 
 export default function Home() {
+  const firstThreeItems = data.slice(0, 3);
+  const secondThreeItems = data.slice(3, 6);
+
   return (
     <main className={styles.container}>
       <section className={styles.wrap}>
@@ -50,21 +49,9 @@ export default function Home() {
             <h2>HOODIES AND SWEATSHIRTS</h2>
           </div>
           <div className={styles.products}>
-            <div className={styles.product}>
-              <Image src={im6} alt="product" />
-              <h4>Ghost Squadron Sweatshirt</h4>
-              <p>999 SEK</p>
-            </div>
-            <div className={styles.product}>
-              <Image src={im7} alt="product" />
-              <h4>Koenigsegg Sweatshirt</h4>
-              <p>999 SEK</p>
-            </div>
-            <div className={styles.product}>
-              <Image src={im8} alt="product" />
-              <h4>Ghost Sweatshirt</h4>
-              <p>999 SEK</p>
-            </div>
+            {firstThreeItems.map((item) => (
+              <Products key={item.id} product={item} />
+            ))}
           </div>
         </div>
       </section>
@@ -115,21 +102,9 @@ export default function Home() {
             <h2>BESTSELLERS</h2>
           </div>
           <div className={styles.products}>
-            <div className={styles.product}>
-              <Image src={im9} alt="product" />
-              <h4>Black Cap</h4>
-              <p>355 SEK</p>
-            </div>
-            <div className={styles.product}>
-              <Image src={im10} alt="product" />
-              <h4>Koenigsegg Keyring</h4>
-              <p>359 SEK</p>
-            </div>
-            <div className={styles.product}>
-              <Image src={im11} alt="product" />
-              <h4>Grey Cap</h4>
-              <p>355 SEK</p>
-            </div>
+            {secondThreeItems.map((item) => (
+              <Products key={item.id} product={item} />
+            ))}
           </div>
         </div>
       </section>
