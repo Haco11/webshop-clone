@@ -4,11 +4,10 @@ import { usePathname } from "next/navigation";
 import { Product } from "@/type/Product";
 import { data } from "../../../data";
 import Image from "next/image";
-
+import styles from "./page.module.scss";
 const page = () => {
   const router = usePathname();
   const productId = router.split("/").pop();
-
   const product: Product | undefined = data.find(
     (item) => item.id === Number(productId)
   );
@@ -16,10 +15,26 @@ const page = () => {
     return <div>Product not found</div>;
   }
   return (
-    <div>
-      <h2>{product.title}</h2>
-      <p>{product.price} SEK</p>
-      <Image src={product.image_url} alt="product" />
+    <div className={styles.container}>
+      <div className={styles.bredcrumb}>
+        START / WEARABLES / READY TO WEAR UNISEX / HOODIES AND SWEATSHIRTS /
+        GHOST SQUADRON SWEATSHIRT
+      </div>
+      <div className={styles.products}>
+        <div className={styles.products__img__container}>
+          <div className={styles.products__img__container__selected}>
+            <Image src={product.image_url} alt="product" />
+          </div>
+          <div className={styles.products__img__container__option}>
+            <Image src={product.image_url} alt="product" />
+            <Image src={product.image_url} alt="product" />
+          </div>
+        </div>
+        <div className={styles.products__info}>
+          <h2>{product.title}</h2>
+          <p>{product.price} SEK</p>
+        </div>
+      </div>
     </div>
   );
 };
