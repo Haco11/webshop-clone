@@ -5,6 +5,7 @@ import { Product } from "@/type/Product";
 import { data } from "../../../data";
 import Image from "next/image";
 import styles from "./page.module.scss";
+
 const page = () => {
   const router = usePathname();
   const productId = router.split("/").pop();
@@ -30,9 +31,19 @@ const page = () => {
             <Image src={product.image_url} alt="product" />
           </div>
         </div>
-        <div className={styles.products__info}>
-          <h2>{product.title}</h2>
-          <p>{product.price} SEK</p>
+        <div className={styles.product}>
+          <div className={styles.product__info}>
+            <h2>{product.title}</h2>
+            <p>{product.price} SEK</p>
+          </div>
+          <div className={styles.product__addcart}>
+            <div className={styles.product__addcart__quantity}>
+              <button>-</button>
+              <p>0</p>
+              <button>+</button>
+            </div>
+            <a href="#">Add to cart</a>
+          </div>
         </div>
       </div>
     </div>

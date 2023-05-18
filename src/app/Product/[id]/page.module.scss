@@ -37,3 +37,55 @@
 .wrap {
   margin: 90px 0px;
 }
+
+.product {
+  max-width: 100%;
+  margin: 0 2rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 500;
+    }
+    p {
+      font-size: 1.4rem;
+    }
+    padding: 0 0 2rem 0;
+    border-bottom: 1px solid #383839;
+  }
+
+  &__addcart {
+    display: flex;
+
+    flex-direction: row;
+    gap: 1rem;
+    &__quantity {
+      display: flex;
+
+      flex-direction: row;
+      gap: 3rem;
+      align-items: center;
+      button {
+        outline: none;
+        border: none;
+        background-color: transparent;
+        font-size: 1rem;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: white;
+      width: 100%;
+      background-color: #000;
+      padding: 1rem 2rem;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+  }
+}
