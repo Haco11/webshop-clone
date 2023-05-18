@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import { Product } from "@/type/Product";
 import { data } from "../../../data";
@@ -15,6 +15,8 @@ const page = () => {
   if (!product) {
     return <div>Product not found</div>;
   }
+  const [quantity, setquantity] = useState(0);
+
   return (
     <div className={styles.container}>
       <div className={styles.bredcrumb}>
@@ -38,9 +40,9 @@ const page = () => {
           </div>
           <div className={styles.product__addcart}>
             <div className={styles.product__addcart__quantity}>
-              <button>-</button>
-              <p>0</p>
-              <button>+</button>
+              <button onClick={() => setquantity(quantity - 1)}>-</button>
+              <p>{quantity}</p>
+              <button onClick={() => setquantity(quantity + 1)}>+</button>
             </div>
             <a href="#">Add to cart</a>
           </div>
