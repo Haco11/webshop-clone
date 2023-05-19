@@ -9,11 +9,15 @@ interface CartItem {
 interface CartContextProps {
   cartItems: CartItem[];
   addToCart: (product: Product) => void;
+  removeFromCart: (productId: number) => void;
+  clearCart: () => void;
 }
 
 export const CartContext = createContext<CartContextProps>({
   cartItems: [],
   addToCart: () => {},
+  removeFromCart: () => {},
+  clearCart: () => {},
 });
 
 const CartProvider: React.FC<{ children: React.ReactNode }> = ({
@@ -34,11 +38,30 @@ const CartProvider: React.FC<{ children: React.ReactNode }> = ({
     setCartItems((prevCartItems) => [...prevCartItems, item]);
   };
 
+  const removeFromCart = (productId: number) => {
+    setCartItems((prevCartItems) => {
+      const indexToRemove = prevCartItems.findIndex(
+        (item) => item.product.id === productId
+      );
+      if (indexToRemove !== -1) {
+        const updatedCartItems = [...prevCartItems];
+        updatedCartItems.splice(indexToRemove, 1);
+        return updatedCartItems;
+      }
+      return prevCartItems;
+    });
+  };
+
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
   const contextValue: CartContextProps = {
     cartItems,
     addToCart,
+    removeFromCart,
+    clearCart,
   };
-  console.log(cartItems);
 
   return (
     <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>
