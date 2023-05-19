@@ -21,7 +21,12 @@ const page = () => {
   const { addToCart } = useContext(CartContext);
 
   const handleAddToCart = () => {
-    addToCart(product);
+    const productWithQuantity: Product = {
+      ...product,
+      quantity: quantity,
+    };
+    addToCart(productWithQuantity);
+    setquantity(1);
   };
   return (
     <div className={styles.container}>
