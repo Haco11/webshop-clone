@@ -1,10 +1,11 @@
 "use client";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Product } from "@/type/Product";
 import { data } from "../../../data";
 import Image from "next/image";
 import styles from "./page.module.scss";
+import { CartContext } from "@/context/cartContext";
 
 const page = () => {
   const router = usePathname();
@@ -15,8 +16,13 @@ const page = () => {
   if (!product) {
     return <div>Product not found</div>;
   }
-  const [quantity, setquantity] = useState(0);
+  const [quantity, setquantity] = useState(1);
 
+  const { addToCart } = useContext(CartContext);
+
+  const handleAddToCart = () => {
+    addToCart(product);
+  };
   return (
     <div className={styles.container}>
       <div className={styles.bredcrumb}>
@@ -44,7 +50,7 @@ const page = () => {
               <p>{quantity}</p>
               <button onClick={() => setquantity(quantity + 1)}>+</button>
             </div>
-            <a href="#">Add to cart</a>
+            <button onClick={handleAddToCart}>Add to cart</button>
           </div>
         </div>
       </div>
