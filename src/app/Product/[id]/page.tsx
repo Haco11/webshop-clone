@@ -7,7 +7,9 @@ import Image from "next/image";
 import styles from "./page.module.scss";
 import { CartContext } from "@/context/cartContext";
 
-const page = () => {
+const Page = () => {
+  const { addToCart } = useContext(CartContext);
+  const [quantity, setquantity] = useState(1);
   const router = usePathname();
   const productId = router.split("/").pop();
   const product: Product | undefined = data.find(
@@ -16,9 +18,6 @@ const page = () => {
   if (!product) {
     return <div>Product not found</div>;
   }
-  const [quantity, setquantity] = useState(1);
-
-  const { addToCart } = useContext(CartContext);
 
   const handleAddToCart = () => {
     const productWithQuantity: Product = {
@@ -63,4 +62,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
