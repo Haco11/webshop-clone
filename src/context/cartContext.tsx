@@ -39,16 +39,28 @@ const CartProvider: React.FC<{ children: React.ReactNode }> = ({
   }, [cartItems]);
 
   const addToCart = (product: Product) => {
-    const item: CartItem = {
-      product: {
-        id: product.id,
-        title: product.title,
-        price: product.price,
-        image_url: product.image_url,
-        quantity: product.quantity,
-      },
-    };
-    setCartItems((prevCartItems) => [...prevCartItems, item]);
+    const existingItemIndex = cartItems.findIndex(
+      (item) => item.product.id === product.id
+    );
+
+    if (existingItemIndex !== -1) {
+      // Product already exists in cart, update the quantity
+      const updatedCartItems = [...cartItems];
+      updatedCartItems[existingItemIndex].product.quantity += product.quantity;
+      setCartItems(updatedCartItems);
+    } else {
+      // Product does not exist in cart, add it as a new item
+      const item: CartItem = {
+        product: {
+          id: product.id,
+          title: product.title,
+          price: product.price,
+          image_url: product.image_url,
+          quantity: product.quantity,
+        },
+      };
+      setCartItems((prevCartItems) => [...prevCartItems, item]);
+    }
   };
 
   const removeFromCart = (productId: number) => {
