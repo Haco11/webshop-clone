@@ -1,5 +1,8 @@
 import { CartContext } from "@/context/cartContext";
+import Image from "next/image";
 import { useContext } from "react";
+import styles from "./CartContent.module.scss";
+import { BsTrash } from "react-icons/bs";
 
 function CartContent() {
   const { cartItems, removeFromCart } = useContext(CartContext);
@@ -10,12 +13,16 @@ function CartContent() {
   return (
     <>
       {cartItems?.map((item, index) => (
-        <div key={index} className="cart__item__details">
-          <span>{item.product.title}</span>
-          <span>{item.product.quantity}</span>
-          <button onClick={() => handleRemoveFromCart(item.product.id)}>
-            Remove from cart
-          </button>
+        <div key={index} className={styles.cart__item__details}>
+          <div className={styles.cart__item__details__img}>
+            <Image src={item.product.image_url} alt="product" />
+          </div>
+          <div className={styles.cart__item__details__wrap}>
+            <span>{item.product.title}</span>
+            <span>{item.product.price} SEK</span>
+            <span>{item.product.quantity}</span>
+          </div>
+          <BsTrash onClick={() => handleRemoveFromCart(item.product.id)} />
         </div>
       ))}
     </>
