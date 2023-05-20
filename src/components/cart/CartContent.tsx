@@ -20,7 +20,7 @@ function CartContent() {
           <div className={styles.cart__item__details__wrap}>
             <span>{item.product.title}</span>
             <span>{item.product.price} SEK</span>
-            <span>{item.product.quantity}</span>
+            <span> Quantity: {item.product.quantity}</span>
           </div>
           <BsTrash onClick={() => handleRemoveFromCart(item.product.id)} />
         </div>
