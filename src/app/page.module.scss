@@ -106,29 +106,3 @@
     gap: 2rem;
   }
 }
-
-/*Cart css*/
-.cart {
-  position: fixed;
-  top: 77px;
-  right: 0;
-  width: 0px;
-  max-width: 100%;
-  height: calc(100% - 77px);
-  background-color: #fff;
-  transition: all 0.2s ease-in-out;
-  padding: 1rem;
-  visibility: hidden;
-
-  .cart__title {
-    padding: 2rem 0rem;
-    border-bottom: 1px solid #383839;
-    font-size: 2rem;
-    font-weight: 700;
-  }
-}
-
-.cart__active {
-  visibility: visible;
-  width: 400px;
-}

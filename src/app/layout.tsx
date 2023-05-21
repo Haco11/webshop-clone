@@ -26,12 +26,8 @@ export default function RootLayout({
             selectedNavItem={selectedNavItem}
           />
           <main className="container">{children}</main>
-          <div className={`cart ${selectedNavItem ? "cart__active" : null}`}>
-            <div className="cart__title"> Shopping Cart</div>
-            <div className="cart__item">
-              <CartConent />
-            </div>
-          </div>
+          <CartConent selectedNavItem={selectedNavItem} />
+
           <Footer />
         </CartProvider>
       </body>
