@@ -1,6 +1,8 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
+import { CartContext } from "@/context/cartContext";
+
 import style from "./Header.module.scss";
 import { FiSearch, FiUser } from "react-icons/fi";
 import { BsCart } from "react-icons/bs";
@@ -12,6 +14,13 @@ type Props = {
 };
 
 const Header = ({ toggleCart, selectedNavItem }: Props) => {
+  const { cartItems } = useContext(CartContext);
+
+  const totalQuantity = cartItems.reduce(
+    (total, item) => total + item.product.quantity,
+    0
+  );
+
   return (
     <div className={style.header__container}>
       <div className={style.header}>
@@ -39,6 +48,9 @@ const Header = ({ toggleCart, selectedNavItem }: Props) => {
             onClick={() => toggleCart()}
             className={selectedNavItem ? style.icon__active : undefined}>
             <BsCart />
+            {totalQuantity > 0 && (
+              <span className={style.icon_quantity}>{totalQuantity}</span>
+            )}
           </a>
           <div className={style.header__hamburger}>
             <RxHamburgerMenu />

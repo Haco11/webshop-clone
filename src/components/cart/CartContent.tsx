@@ -11,6 +11,12 @@ function CartContent({ selectedNavItem }: Props) {
   const totalPrice = cartItems.reduce((total, item) => {
     return total + item.product.price * item.product.quantity;
   }, 0);
+
+  const totalQuantity = cartItems.reduce(
+    (total, item) => total + item.product.quantity,
+    0
+  );
+
   const handleRemoveFromCart = (productId: number) => {
     removeFromCart(productId);
   };

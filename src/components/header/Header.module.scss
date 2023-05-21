@@ -34,11 +34,26 @@
   &__icon {
     display: flex;
     gap: 3rem;
+    position: relative;
     svg {
       font-size: 1.5rem;
     }
     .icon__active {
       color: #fcb900;
+    }
+    .icon_quantity {
+      position: absolute;
+      top: -10px;
+      left: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fcb900;
+      width: 20px;
+      height: 20px;
+      font-size: 0.85rem;
+      border-radius: 50%;
+      color: #000;
     }
     a {
       font-size: 1.25rem;
