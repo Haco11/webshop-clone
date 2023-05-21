@@ -15,7 +15,10 @@ function CartContent({ selectedNavItem }: Props) {
     removeFromCart(productId);
   };
   return (
-    <div className={`cart ${selectedNavItem ? "cart__active" : ""}`}>
+    <div
+      className={`${styles.cart} ${
+        selectedNavItem ? `${styles.cart__active}` : ""
+      }`}>
       <div className={styles.cart__title}> Shopping Cart</div>
       <div className={styles.cart__item}>
         {cartItems?.map((item, index) => (

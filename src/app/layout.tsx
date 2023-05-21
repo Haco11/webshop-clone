@@ -27,7 +27,10 @@ export default function RootLayout({
           />
           <main className="container">{children}</main>
           <CartConent selectedNavItem={selectedNavItem} />
-
+          <div
+            className={`overlay ${
+              selectedNavItem ? "overlay__active" : ""
+            }`}></div>
           <Footer />
         </CartProvider>
       </body>
