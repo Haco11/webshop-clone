@@ -12,11 +12,6 @@ function CartContent({ selectedNavItem }: Props) {
     return total + item.product.price * item.product.quantity;
   }, 0);
 
-  const totalQuantity = cartItems.reduce(
-    (total, item) => total + item.product.quantity,
-    0
-  );
-
   const handleRemoveFromCart = (productId: number) => {
     removeFromCart(productId);
   };
@@ -27,6 +22,7 @@ function CartContent({ selectedNavItem }: Props) {
       }`}>
       <div className={styles.cart__title}> Shopping Cart</div>
       <div className={styles.cart__item}>
+        {cartItems.length === 0 ? <p>No product in cart</p> : ""}
         {cartItems?.map((item, index) => (
           <div key={index} className={styles.cart__item__details}>
             <div className={styles.cart__item__details__img}>
@@ -41,10 +37,15 @@ function CartContent({ selectedNavItem }: Props) {
           </div>
         ))}
       </div>
-      <div className={styles.cart__checkout}>
-        <p>Total: {totalPrice} SEK</p>
-        <button> CHEACKOUT</button>
-      </div>
+
+      {totalPrice ? (
+        <div className={styles.cart__checkout}>
+          <p>Total: {totalPrice} SEK</p>
+          <button> CHEACKOUT</button>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

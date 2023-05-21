@@ -44,7 +44,6 @@ const Header = ({ toggleCart, selectedNavItem }: Props) => {
             <FiUser />
           </a>
           <a
-            href="#"
             onClick={() => toggleCart()}
             className={selectedNavItem ? style.icon__active : undefined}>
             <BsCart />
