@@ -11,44 +11,48 @@ export const data: Product[] = [
     title: "Ghost Squadron Sweatshirt",
     price: 999,
     image_url: im6,
-    quantity: 100,
+    quantity: 1,
   },
   {
     id: 2,
     title: "Koenigsegg Sweatshirt",
     price: 999,
     image_url: im7,
-    quantity: 100,
+    quantity: 1,
   },
   {
     id: 3,
     title: "Ghost Sweatshirt",
     price: 999,
     image_url: im8,
-    quantity: 100,
+    quantity: 1,
   },
   {
     id: 4,
     title: "Black Cap",
     price: 355,
     image_url: im9,
-    quantity: 100,
+    quantity: 1,
   },
   {
     id: 5,
     title: "Koenigsegg Keyring",
     price: 359,
     image_url: im10,
-    quantity: 100,
+    quantity: 1,
   },
   {
     id: 6,
     title: "Grey Cap",
     price: 355,
     image_url: im11,
-    quantity: 100,
+    quantity: 1,
   },
 ];
+
+export const getProductsByIds = (ids: number[]): Product[] => {
+  return data.filter((product) => ids.includes(product.id));
+};
 
 export const featured_products = [1, 5, 8];
 

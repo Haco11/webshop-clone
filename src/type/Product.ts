@@ -4,6 +4,6 @@ export interface Product {
   id: number;
   title: string;
   price: number;
-  image_url: StaticImageData;
+  image_url: StaticImageData | string;
   quantity: number;
 }

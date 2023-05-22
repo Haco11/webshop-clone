@@ -12,6 +12,7 @@ function CartContent({ selectedNavItem }: Props) {
   const totalPrice = cartItems.reduce((total, item) => {
     return total + item.product.price * item.product.quantity;
   }, 0);
+  const productIds = cartItems.map((item) => item.product.id).join(",");
 
   const handleRemoveFromCart = (productId: number) => {
     removeFromCart(productId);
@@ -42,7 +43,7 @@ function CartContent({ selectedNavItem }: Props) {
       {totalPrice ? (
         <div className={styles.cart__checkout}>
           <p>Total: {totalPrice} SEK</p>
-          <Link href={`checkout/` + 12}> CHEACKOUT </Link>
+          <Link href={`checkout/` + productIds}> CHEACKOUT </Link>
         </div>
       ) : (
         ""
