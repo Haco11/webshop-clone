@@ -1,3 +1,4 @@
+"use server";
 import { Product } from "@/type/Product";
 
 function getKlarnaAuth() {
@@ -41,9 +42,9 @@ export async function createOrder(products: Product[]) {
 
   const formattedProduct = products.map(formatProduct);
   const order_lines = formatAsOrderLines(formattedProduct);
-
-  let order_amount = 0;
-  let order_tax_amount = 0;
+  console.log(order_lines);
+  let order_amount = 1;
+  let order_tax_amount = 1;
 
   order_lines.forEach((item: any) => {
     order_amount += item.total_amount;
@@ -71,6 +72,7 @@ export async function createOrder(products: Product[]) {
   const body = JSON.stringify(payload);
   const response = await fetch(url, { method, headers, body });
   const jsonResponse = await response.json();
+  console.log("yes");
 
   // "200" is success from Klarna KCO docs
   if (response.status === 200 || response.status === 201) {

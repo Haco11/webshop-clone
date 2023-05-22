@@ -43,7 +43,7 @@ function CartContent({ selectedNavItem }: Props) {
       {totalPrice ? (
         <div className={styles.cart__checkout}>
           <p>Total: {totalPrice} SEK</p>
-          <Link href={`checkout/` + productIds}> CHEACKOUT </Link>
+          <Link href={`checkout`}> CHEACKOUT </Link>
         </div>
       ) : (
         ""
