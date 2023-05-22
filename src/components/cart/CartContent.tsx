@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useContext } from "react";
 import styles from "./CartContent.module.scss";
 import { BsTrash } from "react-icons/bs";
+import Link from "next/link";
 type Props = {
   selectedNavItem: boolean;
 };
@@ -22,7 +23,7 @@ function CartContent({ selectedNavItem }: Props) {
       }`}>
       <div className={styles.cart__title}> Shopping Cart</div>
       <div className={styles.cart__item}>
-        {cartItems.length === 0 ? <p>No product in cart</p> : ""}
+        {cartItems ? "Hello" : "diue"}
         {cartItems?.map((item, index) => (
           <div key={index} className={styles.cart__item__details}>
             <div className={styles.cart__item__details__img}>
@@ -41,7 +42,7 @@ function CartContent({ selectedNavItem }: Props) {
       {totalPrice ? (
         <div className={styles.cart__checkout}>
           <p>Total: {totalPrice} SEK</p>
-          <button> CHEACKOUT</button>
+          <Link href={`checkout/` + 12}> CHEACKOUT </Link>
         </div>
       ) : (
         ""

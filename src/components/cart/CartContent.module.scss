@@ -20,7 +20,7 @@
     p {
       font-size: 1.1rem;
     }
-    button {
+    a {
       color: #fff;
       text-align: center;
       text-decoration: none;
@@ -28,8 +28,6 @@
       padding: 0.75rem;
       text-transform: uppercase;
       width: 100%;
-      outline: none;
-      border: 0;
       font-size: 1.25rem;
       &:hover {
         background-color: #ffc801;
