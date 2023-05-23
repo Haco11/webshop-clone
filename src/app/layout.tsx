@@ -26,7 +26,10 @@ export default function RootLayout({
             selectedNavItem={selectedNavItem}
           />
           <main className="container">{children}</main>
-          <CartConent selectedNavItem={selectedNavItem} />
+          <CartConent
+            selectedNavItem={selectedNavItem}
+            toggleCart={handleNavItemClick}
+          />
           <div
             className={`overlay ${selectedNavItem ? "overlay__active" : ""}`}
             onClick={handleNavItemClick}></div>

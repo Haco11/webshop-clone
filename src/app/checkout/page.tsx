@@ -23,7 +23,7 @@ const Page = () => {
   }, []);
   return (
     <div
-      style={{ marginTop: 100 }}
+      style={{ marginTop: 77 }}
       dangerouslySetInnerHTML={{ __html: htmlSnippet }}
     />
   );

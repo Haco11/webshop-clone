@@ -5,9 +5,10 @@ import styles from "./CartContent.module.scss";
 import { BsTrash } from "react-icons/bs";
 import Link from "next/link";
 type Props = {
+  toggleCart: () => void;
   selectedNavItem: boolean;
 };
-function CartContent({ selectedNavItem }: Props) {
+function CartContent({ selectedNavItem, toggleCart }: Props) {
   const { cartItems, removeFromCart } = useContext(CartContext);
   const totalPrice = cartItems.reduce((total, item) => {
     return total + item.product.price * item.product.quantity;
@@ -43,7 +44,9 @@ function CartContent({ selectedNavItem }: Props) {
       {totalPrice ? (
         <div className={styles.cart__checkout}>
           <p>Total: {totalPrice} SEK</p>
-          <Link href={`checkout`}> CHEACKOUT </Link>
+          <Link href={`checkout`} onClick={toggleCart}>
+            CHEACKOUT
+          </Link>
         </div>
       ) : (
         ""
