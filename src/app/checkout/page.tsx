@@ -6,6 +6,7 @@ import { CartContext } from "@/context/cartContext";
 const Page = () => {
   const { cartItems } = useContext(CartContext);
   const products = cartItems.map((item) => item.product);
+  console.log(products);
   const [htmlSnippet, setHtmlSnippet] = useState("");
   const [timerCount, setTimerCount] = useState(0);
   const processOrder = async () => {
@@ -21,7 +22,7 @@ const Page = () => {
         clearTimeout(timer);
       };
     }
-  }, [products, timerCount]);
+  }, [timerCount]);
   return (
     <div
       style={{ marginTop: 100 }}

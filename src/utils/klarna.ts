@@ -9,24 +9,23 @@ function getKlarnaAuth() {
   return auth;
 }
 function formatProduct(product: Product) {
+  const quantity = product.quantity;
+  const price = product.price * 100;
+  const total_amount = price * quantity;
+  const total_tax_amount =
+    total_amount - (total_amount * 10000) / (10000 + 2500);
   return {
-    type: "physical", // same
+    type: "physical",
     reference: product.id,
     name: product.title,
-    quantity: product.quantity,
-    quantity_unit: "pcs", // same
-    unit_price: product.price * 100,
+    quantity,
+    quantity_unit: "p",
+    unit_price: price,
     tax_rate: 2500,
-    total_discount_amount: 0, // same
+    total_discount_amount: 0,
+    total_amount,
+    total_tax_amount,
   };
-}
-function formatAsOrderLines(currentCart: any) {
-  currentCart.forEach((item: any) => {
-    item.total_amount = item.quantity * item.unit_price;
-    item.total_tax_amount =
-      item.total_amount - (item.total_amount * 10000) / (10000 + item.tax_rate);
-  });
-  return currentCart;
 }
 
 export async function createOrder(products: Product[]) {
@@ -40,11 +39,10 @@ export async function createOrder(products: Product[]) {
     Authorization: auth,
   };
 
-  const formattedProduct = products.map(formatProduct);
-  const order_lines = formatAsOrderLines(formattedProduct);
-  console.log(order_lines);
-  let order_amount = 1;
-  let order_tax_amount = 1;
+  const order_lines = products.map(formatProduct);
+
+  let order_amount = 0;
+  let order_tax_amount = 0;
 
   order_lines.forEach((item: any) => {
     order_amount += item.total_amount;
@@ -61,18 +59,14 @@ export async function createOrder(products: Product[]) {
     order_lines,
     merchant_urls: {
       terms: "https://www.example.com/terms.html",
-      checkout:
-        "https://www.example.com/checkout.html?order_id={checkout.order.id}",
-      confirmation:
-        "http://localhost:3000/confirmation?order_id={checkout.order.id}",
-      push: "https://www.example.com/api/push?order_id={checkout.order.id}",
+      checkout: "https://www.example.com/checkout.html",
+      confirmation: `${process.env.NEXT_PUBLIC_REDIRECT_URL}/confirmation?order_id={checkout.order.id}`,
+      push: "https://www.example.com/api/push",
     },
   };
-
   const body = JSON.stringify(payload);
   const response = await fetch(url, { method, headers, body });
   const jsonResponse = await response.json();
-  console.log("yes");
 
   // "200" is success from Klarna KCO docs
   if (response.status === 200 || response.status === 201) {

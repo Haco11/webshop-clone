@@ -24,7 +24,7 @@ function CartContent({ selectedNavItem }: Props) {
       }`}>
       <div className={styles.cart__title}> Shopping Cart</div>
       <div className={styles.cart__item}>
-        {cartItems ? "Hello" : "diue"}
+        {cartItems.length === 0 ? "There is no items in cart" : ""}
         {cartItems?.map((item, index) => (
           <div key={index} className={styles.cart__item__details}>
             <div className={styles.cart__item__details__img}>
