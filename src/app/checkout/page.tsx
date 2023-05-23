@@ -8,21 +8,19 @@ const Page = () => {
   const products = cartItems.map((item) => item.product);
   console.log(products);
   const [htmlSnippet, setHtmlSnippet] = useState("");
-  const [timerCount, setTimerCount] = useState(0);
-  const processOrder = async () => {
-    const response = await createOrder(products);
-    setHtmlSnippet(response.html_snippet);
-    setTimerCount((prevCount) => prevCount + 1);
-  };
-  useEffect(() => {
-    if (timerCount < 1) {
-      const timer = setTimeout(processOrder, 1000);
 
-      return () => {
-        clearTimeout(timer);
-      };
+  const processOrder = async () => {
+    try {
+      const response = await createOrder(products);
+      setHtmlSnippet(response.html_snippet);
+    } catch (error) {
+      console.error("Error creating order:", error);
     }
-  }, [timerCount]);
+  };
+
+  useEffect(() => {
+    processOrder();
+  }, []);
   return (
     <div
       style={{ marginTop: 100 }}

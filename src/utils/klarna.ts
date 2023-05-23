@@ -19,7 +19,7 @@ function formatProduct(product: Product) {
     reference: product.id,
     name: product.title,
     quantity,
-    quantity_unit: "p",
+    quantity_unit: "pcs",
     unit_price: price,
     tax_rate: 2500,
     total_discount_amount: 0,
@@ -40,7 +40,6 @@ export async function createOrder(products: Product[]) {
   };
 
   const order_lines = products.map(formatProduct);
-
   let order_amount = 0;
   let order_tax_amount = 0;
 
@@ -49,6 +48,7 @@ export async function createOrder(products: Product[]) {
     order_tax_amount += item.total_tax_amount;
   });
 
+  console.log(order_lines);
   // The payload we send to Klarna
   const payload = {
     purchase_country: "SE",
@@ -67,6 +67,10 @@ export async function createOrder(products: Product[]) {
   const body = JSON.stringify(payload);
   const response = await fetch(url, { method, headers, body });
   const jsonResponse = await response.json();
+
+  const paths = "/checkout/v3/orders/" + jsonResponse.order_id;
+  const urls = process.env.NEXT_PUBLIC_BASE_URL + paths;
+  console.log(urls);
 
   // "200" is success from Klarna KCO docs
   if (response.status === 200 || response.status === 201) {
