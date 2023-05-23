@@ -48,7 +48,6 @@ export async function createOrder(products: Product[]) {
     order_tax_amount += item.total_tax_amount;
   });
 
-  console.log(order_lines);
   // The payload we send to Klarna
   const payload = {
     purchase_country: "SE",
@@ -64,6 +63,7 @@ export async function createOrder(products: Product[]) {
       push: "https://www.example.com/api/push",
     },
   };
+  console.log(process.env.NEXT_PUBLIC_REDIRECT_URL);
   const body = JSON.stringify(payload);
   const response = await fetch(url, { method, headers, body });
   const jsonResponse = await response.json();
