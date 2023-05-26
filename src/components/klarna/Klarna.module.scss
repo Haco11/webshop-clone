@@ -1,0 +1,12 @@
+.klarna {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  margin-top: 77px;
+
+  iframe {
+    width: 100vw;
+    height: 100%;
+  }
+}
