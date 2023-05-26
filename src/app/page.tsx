@@ -130,10 +130,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* Cart ${styles.cart__active} */}
-      <div className={`${styles.cart}`}>
-        <div className={styles.cart__title}> Shopping Cart</div>
-      </div>
     </main>
   );
 }

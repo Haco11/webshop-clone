@@ -13,7 +13,6 @@ function CartContent({ selectedNavItem, toggleCart }: Props) {
   const totalPrice = cartItems.reduce((total, item) => {
     return total + item.product.price * item.product.quantity;
   }, 0);
-  const productIds = cartItems.map((item) => item.product.id).join(",");
 
   const handleRemoveFromCart = (productId: number) => {
     removeFromCart(productId);
