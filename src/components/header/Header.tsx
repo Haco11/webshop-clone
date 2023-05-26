@@ -7,6 +7,7 @@ import style from "./Header.module.scss";
 import { FiSearch, FiUser } from "react-icons/fi";
 import { BsCart } from "react-icons/bs";
 import { RxHamburgerMenu } from "react-icons/rx";
+import Link from "next/link";
 
 type Props = {
   toggleCart: () => void;
@@ -28,21 +29,21 @@ const Header = ({ toggleCart, selectedNavItem }: Props) => {
           <a href="">Wearables</a>
           <a href="">Collectibles</a>
         </div>
-        <a href="/">
+        <Link href="/">
           <Image
             src="https://gear.koenigsegg.com/wp-content/uploads/2022/12/Koenigsegg_wordmark_bl200115.svg"
             alt=""
             width={200}
             height={25}
           />
-        </a>
+        </Link>
         <div className={style.header__icon}>
-          <a href="#">
+          <p>
             <FiSearch />
-          </a>
-          <a href="#">
+          </p>
+          <p>
             <FiUser />
-          </a>
+          </p>
           <a
             onClick={() => toggleCart()}
             className={selectedNavItem ? style.icon__active : undefined}>

@@ -5,9 +5,15 @@ import im2 from "../assets/img2.jpg";
 import im3 from "../assets/img3.jpg";
 import im4 from "../assets/img4.jpg";
 import im5 from "../assets/img5.jpg";
+import { Metadata } from "next";
 
 import { data } from "../data";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Koenigsegg",
+  description: "A shoping clone ",
+};
 
 export default function Home() {
   const firstThreeItems = data.slice(0, 3);

@@ -15,15 +15,15 @@ const Klarna = ({ cart }: any) => {
   }
   useEffect(() => {
     fetchHtml(product);
-  }, []);
+  }, [cart]);
 
-  useEffect(() => {}, []);
   return (
     <div className={styles.klarna}>
       {htmlSnippet !== "" && (
         <iframe
           title="klarnaCheckout"
           srcDoc={htmlSnippet}
+          scrolling="no"
           frameBorder="0"></iframe>
       )}
       {htmlSnippet === "" && (

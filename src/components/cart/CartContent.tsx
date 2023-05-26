@@ -44,7 +44,7 @@ function CartContent({ selectedNavItem, toggleCart }: Props) {
         <div className={styles.cart__checkout}>
           <p>Total: {totalPrice} SEK</p>
           <Link href={`checkout`} onClick={toggleCart}>
-            CHEACKOUT
+            CHECKOUT
           </Link>
         </div>
       ) : (
