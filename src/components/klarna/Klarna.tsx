@@ -23,7 +23,6 @@ const Klarna = ({ cart }: any) => {
         <iframe
           title="klarnaCheckout"
           srcDoc={htmlSnippet}
-          scrolling="no"
           frameBorder="0"></iframe>
       )}
       {htmlSnippet === "" && (
