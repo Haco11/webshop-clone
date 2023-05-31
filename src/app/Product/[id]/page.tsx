@@ -9,7 +9,9 @@ import { CartContext } from "@/context/cartContext";
 
 const Page = () => {
   const { addToCart } = useContext(CartContext);
-  const [quantity, setquantity] = useState(1);
+  const [quantity, setQuantity] = useState(1);
+  const [showNotification, setShowNotification] = useState(false);
+
   const router = usePathname();
   const productId = router.split("/").pop();
   const product: Product | undefined = data.find(
@@ -25,7 +27,11 @@ const Page = () => {
       quantity: quantity,
     };
     addToCart(productWithQuantity);
-    setquantity(1);
+    setQuantity(1);
+    setShowNotification(true);
+    setTimeout(() => {
+      setShowNotification(false);
+    }, 3000);
   };
   return (
     <div className={styles.container}>
@@ -50,13 +56,18 @@ const Page = () => {
           </div>
           <div className={styles.product__addcart}>
             <div className={styles.product__addcart__quantity}>
-              <button onClick={() => setquantity(quantity - 1)}>-</button>
+              <button onClick={() => setQuantity(quantity - 1)}>-</button>
               <p>{quantity}</p>
-              <button onClick={() => setquantity(quantity + 1)}>+</button>
+              <button onClick={() => setQuantity(quantity + 1)}>+</button>
             </div>
             <button onClick={handleAddToCart}>Add to cart</button>
           </div>
         </div>
+        {showNotification && (
+          <div className={styles.notification}>
+            <p>Product added to cart!</p>
+          </div>
+        )}
       </div>
     </div>
   );
