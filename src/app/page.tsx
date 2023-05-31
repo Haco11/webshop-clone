@@ -5,7 +5,7 @@ import im2 from "../assets/img2.jpg";
 import im3 from "../assets/img3.jpg";
 import im4 from "../assets/img4.jpg";
 import im5 from "../assets/img5.jpg";
-
+import Link from "next/link";
 import { data } from "../data";
 import Image from "next/image";
 
@@ -36,9 +36,9 @@ export default function Home() {
               <p>NO. 6</p>
             </h2>
             <p>Dive into the world of Koenigsegg in our latest magazine.</p>
-            <a className={styles.display__text__btn} href="#">
+            <Link className={styles.display__text__btn} href="product/1">
               Shop Now
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -68,9 +68,9 @@ export default function Home() {
               <p>JEWELRY</p>
             </h2>
             <p>Jewelry that adds a spectacular sparkle to our store.</p>
-            <a className={styles.display__text__btn} href="#">
+            <Link className={styles.display__text__btn} href="product/2">
               Shop Now
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -89,9 +89,9 @@ export default function Home() {
               Brighten your style with this yellow Terry polo shirt, featuring
               the Koenigsegg shield embroidered on the chest in yellow.
             </p>
-            <a className={styles.display__text__btn} href="#">
+            <Link className={styles.display__text__btn} href="product/3">
               Shop Now
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -124,9 +124,9 @@ export default function Home() {
               Discover the scale models that Koenigsegg collectors love. They’re
               packed with precise details, and look great anywhere.
             </p>
-            <a className={styles.display__text__btn} href="#">
+            <Link className={styles.display__text__btn} href="product/4">
               Shop Now
-            </a>
+            </Link>
           </div>
         </div>
       </section>
