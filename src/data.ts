@@ -12,6 +12,8 @@ export const data: Product[] = [
     price: 999,
     image_url: im6,
     quantity: 1,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
   },
   {
     id: 2,
@@ -19,6 +21,8 @@ export const data: Product[] = [
     price: 999,
     image_url: im7,
     quantity: 1,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
   },
   {
     id: 3,
@@ -26,6 +30,8 @@ export const data: Product[] = [
     price: 999,
     image_url: im8,
     quantity: 1,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
   },
   {
     id: 4,
@@ -33,6 +39,8 @@ export const data: Product[] = [
     price: 355,
     image_url: im9,
     quantity: 1,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
   },
   {
     id: 5,
@@ -40,6 +48,8 @@ export const data: Product[] = [
     price: 359,
     image_url: im10,
     quantity: 1,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
   },
   {
     id: 6,
@@ -47,6 +57,8 @@ export const data: Product[] = [
     price: 355,
     image_url: im11,
     quantity: 1,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
   },
 ];
 

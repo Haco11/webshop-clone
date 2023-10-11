@@ -5,5 +5,6 @@ export interface Product {
   title: string;
   price: number;
   image_url: StaticImageData | string;
+  description: string;
   quantity: number;
 }
