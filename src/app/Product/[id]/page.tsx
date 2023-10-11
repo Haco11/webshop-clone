@@ -52,7 +52,10 @@ const Page = () => {
         <div className={styles.product}>
           <div className={styles.product__info}>
             <h2>{product.title}</h2>
-            <p>{product.price} SEK</p>
+            <p className={styles.product__info__price}>{product.price} SEK</p>
+            <p className={styles.product__info__description}>
+              {product.description}
+            </p>
           </div>
           <div className={styles.product__addcart}>
             <div className={styles.product__addcart__quantity}>
